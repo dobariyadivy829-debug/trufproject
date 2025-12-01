@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAYSLOT - Book Sports Turfs Online</title>
+    <meta name="description" content="Find and book sports turfs near you. Real-time availability, secure payments, verified venues.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <h1>PLAYSLOT</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-login" onclick="openLoginModal()">Login</a></li>
+                <li><a href="#" class="btn-signup" onclick="openSignupModal()">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Find Your Perfect Sports Turf</h2>
+                <p>Book premium sports venues instantly with real-time availability</p>
+                <a href="#search" class="cta-btn">Find a Turf</a>
+                
+                <!-- Search Form -->
+                <form class="search-form" id="search">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="Enter location" required>
+                        <button type="button" class="location-btn" id="useLocation">📍 Use My Location</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="sport">Sport</label>
+                        <select id="sport" name="sport" required>
+                            <option value="">Select sport</option>
+                            <option value="football" data-price="800">Football - ₹800/hr</option>
+                            <option value="cricket" data-price="1200">Cricket - ₹1200/hr</option>
+                            <option value="basketball" data-price="600">Basketball - ₹600/hr</option>
+                            <option value="tennis" data-price="500">Tennis - ₹500/hr</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="startTime">Start Time</label>
+                        <select id="startTime" name="startTime" required>
+                            <option value="">Select time</option>
+                            <option value="06:00">6:00 AM</option>
+                            <option value="07:00">7:00 AM</option>
+                            <option value="08:00">8:00 AM</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="endTime">End Time</label>
+                        <select id="endTime" name="endTime" required>
+                            <option value="">Select time</option>
+                            <option value="07:00">7:00 AM</option>
+                            <option value="08:00">8:00 AM</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                            <option value="23:00">11:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="price-display" id="priceDisplay">
+                        <strong>Total: ₹0</strong>
+                    </div>
+                    <button type="submit" class="search-btn">Search Nearest Turfs</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>How it Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-icon">🔍</div>
+                        <h3>Search</h3>
+                        <p>Find turfs near you by location and sport</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">📅</div>
+                        <h3>Book</h3>
+                        <p>Select time slot and make secure payment</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">⚽</div>
+                        <h3>Play</h3>
+                        <p>Show up and enjoy your game</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <h2>Why Choose PLAYSLOT</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>Real-time Availability</h3>
+                        <p>See live slot availability and book instantly</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Secure Payment</h3>
+                        <p>Safe and encrypted payment processing</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Verified Turfs</h3>
+                        <p>All venues are quality-checked and verified</p>
+                    </div>
+                    <div class="feature">
+                        <h3>User Reviews</h3>
+                        <p>Read genuine reviews from other players</p>
+                    </div>
+                    <div class="feature">
+                        <h3>Multi-sport Support</h3>
+                        <p>Football, cricket, basketball, tennis and more</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Turfs -->
+        <section class="popular-turfs">
+            <div class="container">
+                <h2>Nearest Turfs</h2>
+                <div class="turfs-grid" id="turfsGrid">
+                    <div class="turf-card" data-sport="football" data-price="800" data-distance="2.5">
+                        <img src="https://via.placeholder.com/300x200/2E8B57/FFFFFF?text=Football+Turf" alt="Green Valley Football Turf">
+                        <div class="card-content">
+                            <h3>Green Valley Football Turf</h3>
+                            <p class="distance">2.5 km away</p>
+                            <p class="price">₹800/hour</p>
+                            <p class="timing">⏰ Available: 6:00 AM - 11:00 PM</p>
+                            <div class="rating">⭐⭐⭐⭐⭐ 4.8</div>
+                            <button class="book-btn" onclick="openBookingModal('Green Valley Football Turf', 'football', 800)">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="turf-card" data-sport="cricket" data-price="1200" data-distance="1.8">
+                        <img src="https://via.placeholder.com/300x200/4682B4/FFFFFF?text=Cricket+Ground" alt="Champions Cricket Ground">
+                        <div class="card-content">
+                            <h3>Champions Cricket Ground</h3>
+                            <p class="distance">1.8 km away</p>
+                            <p class="price">₹1200/hour</p>
+                            <p class="timing">⏰ Available: 7:00 AM - 10:00 PM</p>
+                            <div class="rating">⭐⭐⭐⭐⭐ 4.9</div>
+                            <button class="book-btn" onclick="openBookingModal('Champions Cricket Ground', 'cricket', 1200)">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="turf-card" data-sport="basketball" data-price="600" data-distance="3.2">
+                        <img src="https://via.placeholder.com/300x200/FF6347/FFFFFF?text=Basketball+Court" alt="Urban Basketball Court">
+                        <div class="card-content">
+                            <h3>Urban Basketball Court</h3>
+                            <p class="distance">3.2 km away</p>
+                            <p class="price">₹600/hour</p>
+                            <p class="timing">⏰ Available: 6:00 AM - 9:00 PM</p>
+                            <div class="rating">⭐⭐⭐⭐ 4.6</div>
+                            <button class="book-btn" onclick="openBookingModal('Urban Basketball Court', 'basketball', 600)">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Sport Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <h3>⚽ Football</h3>
+                        <div class="price">₹800/hour</div>
+                        <p>Standard 5v5 or 7v7 turf</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>🏏 Cricket</h3>
+                        <div class="price">₹1200/hour</div>
+                        <p>Full cricket ground with nets</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>🏀 Basketball</h3>
+                        <div class="price">₹600/hour</div>
+                        <p>Indoor/outdoor court</p>
+                    </div>
+                    <div class="pricing-card">
+                        <h3>🎾 Tennis</h3>
+                        <div class="price">₹500/hour</div>
+                        <p>Professional tennis court</p>
+                    </div>
+                </div>
+                <div class="payment-info">
+                    <h3>Payment Options</h3>
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <span class="payment-icon">💵</span>
+                            <strong>Cash on Play</strong>
+                            <p>Pay at the venue when you arrive</p>
+                        </div>
+                        <div class="payment-method">
+                            <span class="payment-icon">📱</span>
+                            <strong>UPI Payment</strong>
+                            <p>Scan QR code and pay instantly</p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">Supports GPay, PhonePe, Paytm & more</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Players Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p>"PLAYSLOT made booking our weekly football matches so easy. Great turfs, fair prices!"</p>
+                        <cite>- Rahul S., Mumbai</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Love the real-time availability feature. No more calling venues to check slots."</p>
+                        <cite>- Priya M., Bangalore</cite>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Secure payments and verified turfs give me confidence. Highly recommended!"</p>
+                        <cite>- Amit K., Delhi</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>PLAYSLOT</h3>
+                    <p>Your trusted sports turf booking platform</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sports">Sports</a></li>
+                        <li><a href="#how-it-works">How it Works</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#facebook" aria-label="Facebook">📘</a>
+                        <a href="#twitter" aria-label="Twitter">🐦</a>
+                        <a href="#instagram" aria-label="Instagram">📷</a>
+                        <a href="#linkedin" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PLAYSLOT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to PLAYSLOT</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="confirm-btn">Login</button>
+                <p style="text-align: center; margin-top: 1rem; color: #6b7280;">
+                    Don't have an account? <a href="#" onclick="closeLoginModal(); openSignupModal();" style="color: #f97316; font-weight: 600;">Sign Up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Sign Up for PLAYSLOT</h2>
+            <form id="signupForm">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPhone">Phone Number</label>
+                    <input type="tel" id="signupPhone" placeholder="Enter your phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="confirm-btn">Sign Up</button>
+                <p style="text-align: center; margin-top: 1rem; color: #6b7280;">
+                    Already have an account? <a href="#" onclick="closeSignupModal(); openLoginModal();" style="color: #f97316; font-weight: 600;">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <h2>Book Your Slot</h2>
+            <div id="bookingDetails"></div>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="bookingDate">Date</label>
+                    <input type="date" id="bookingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingStartTime">Start Time</label>
+                    <select id="bookingStartTime" required>
+                        <option value="06:00">6:00 AM</option>
+                        <option value="07:00">7:00 AM</option>
+                        <option value="08:00">8:00 AM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingEndTime">End Time</label>
+                    <select id="bookingEndTime" required>
+                        <option value="07:00">7:00 AM</option>
+                        <option value="08:00">8:00 AM</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="18:00">6:00 PM</option>
+                        <option value="19:00">7:00 PM</option>
+                        <option value="20:00">8:00 PM</option>
+                        <option value="21:00">9:00 PM</option>
+                    </select>
+                </div>
+                <div class="booking-total" id="bookingTotal">Total: ₹0</div>
+                <div class="form-group">
+                    <label>Payment Method</label>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="cash" checked onchange="handlePaymentChange()"> 💵 Cash on Play</label>
+                        <label><input type="radio" name="payment" value="upi" onchange="handlePaymentChange()"> 📱 UPI Payment</label>
+                    </div>
+                </div>
+                <div id="upiPaymentSection" style="display: none;"></div>
+                <button type="submit" class="confirm-btn">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
